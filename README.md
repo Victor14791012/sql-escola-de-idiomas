@@ -1,5 +1,5 @@
 # sql-escola-de-idiomas
-SQL Utilizado para gerar as tabelas do trabalho do banco de dados  do TADS IFRO-VILHENA 
+DOCUMENTO UTILIZADO DE BASE
 https://docs.google.com/document/d/16E1imBgh17QSSE-fFs_obWcQRGM_6oBb/edit
 
 
@@ -170,8 +170,6 @@ Turma ───< Aula ───< Frequência >─── Matrícula
 # Observações Finais
 
 - Todas as cardinalidades estão coerentes com o minimundo do projeto.
-- O relacionamento N:N entre aluno e turma foi corretamente resolvido pela tabela Matrícula.
-- A modelagem está normalizada e preparada para implementação no MySQL Workbench.
 - O banco contempla controle acadêmico, financeiro e operacional da escola.
 - A estrutura permite expansão futura sem necessidade de grandes alterações.
 
