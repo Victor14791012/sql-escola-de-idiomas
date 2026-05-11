@@ -201,3 +201,456 @@ CREATE TABLE frequencia (
     ON DELETE RESTRICT,
   CONSTRAINT uq_frequencia_aula_matricula UNIQUE (aula_id, matr_id)
 );
+
+
+
+-- =====================================================
+-- TESTES TABELA ALUNO
+-- =====================================================
+
+INSERT INTO aluno (
+  alun_nome,
+  alun_cpf,
+  alun_data_nascimento,
+  alun_telefone,
+  alun_endereco,
+  alun_email,
+  alun_login,
+  alun_senha
+) VALUES
+(
+  'Victor Hugo',
+  '123.456.789-00',
+  '2007-03-15',
+  '(69)99999-1111',
+  '{"rua":"Rua A","numero":"120","bairro":"Centro","cidade":"Vilhena"}',
+  'victor@email.com',
+  'victorh',
+  'senha123'
+),
+(
+  'Maria Oliveira',
+  '987.654.321-00',
+  '2005-07-20',
+  '(69)99999-2222',
+  '{"rua":"Rua B","numero":"50","bairro":"Jardim","cidade":"Vilhena"}',
+  'maria@email.com',
+  'mariao',
+  'senha456'
+),
+(
+  'Carlos Silva',
+  '111.222.333-44',
+  '2000-11-10',
+  '(69)99999-3333',
+  '{"rua":"Rua C","numero":"89","bairro":"Centro","cidade":"Vilhena"}',
+  'carlos@email.com',
+  'carloss',
+  'senha789'
+);
+
+-- =====================================================
+-- TESTES TABELA PROFESSOR
+-- =====================================================
+
+INSERT INTO professor (
+  prof_nome,
+  prof_cpf,
+  prof_telefone,
+  prof_email,
+  prof_especialidade,
+  prof_login,
+  prof_senha
+) VALUES
+(
+  'Ana Souza',
+  '555.111.222-00',
+  '(69)98888-1111',
+  'ana@email.com',
+  'Inglês',
+  'anas',
+  'senha123'
+),
+(
+  'Pedro Lima',
+  '555.111.333-00',
+  '(69)98888-2222',
+  'pedro@email.com',
+  'Espanhol',
+  'pedrol',
+  'senha456'
+),
+(
+  'Juliana Costa',
+  '555.111.444-00',
+  '(69)98888-3333',
+  'juliana@email.com',
+  'Francês',
+  'julianac',
+  'senha789'
+);
+
+-- =====================================================
+-- TESTES TABELA FUNCIONARIO
+-- =====================================================
+
+INSERT INTO funcionario (
+  func_nome,
+  func_cpf,
+  func_telefone,
+  func_email,
+  func_endereco,
+  func_cargo,
+  func_data_contratacao,
+  func_login,
+  func_senha
+) VALUES
+(
+  'Fernanda Alves',
+  '777.111.222-00',
+  '(69)97777-1111',
+  'fernanda@email.com',
+  '{"rua":"Rua D","numero":"10","bairro":"Centro"}',
+  'Atendente',
+  '2024-01-15',
+  'fernanda',
+  'senha123'
+),
+(
+  'Lucas Martins',
+  '777.111.333-00',
+  '(69)97777-2222',
+  'lucas@email.com',
+  '{"rua":"Rua E","numero":"20","bairro":"Centro"}',
+  'Administrador',
+  '2023-08-10',
+  'lucasm',
+  'senha456'
+),
+(
+  'Bruna Rocha',
+  '777.111.444-00',
+  '(69)97777-3333',
+  'bruna@email.com',
+  '{"rua":"Rua F","numero":"30","bairro":"Centro"}',
+  'Secretária',
+  '2022-05-01',
+  'brunar',
+  'senha789'
+);
+
+-- =====================================================
+-- TESTES TABELA CURSO
+-- =====================================================
+
+INSERT INTO curso (
+  curs_nome,
+  curs_nivel,
+  curs_carga_horaria,
+  curs_duracao_meses,
+  curs_descricao,
+  curs_valor,
+  curs_status
+) VALUES
+(
+  'Inglês',
+  'Básico',
+  120,
+  6,
+  'Curso básico de inglês',
+  799.90,
+  'ativo'
+),
+(
+  'Espanhol',
+  'Intermediário',
+  100,
+  5,
+  'Curso intermediário de espanhol',
+  899.90,
+  'ativo'
+),
+(
+  'Francês',
+  'Avançado',
+  140,
+  8,
+  'Curso avançado de francês',
+  1299.90,
+  'ativo'
+);
+
+-- =====================================================
+-- TESTES TABELA TURMA
+-- =====================================================
+
+INSERT INTO turma (
+  curs_id,
+  prof_id,
+  turm_nome,
+  turm_periodo,
+  turm_horario,
+  turm_limite_alunos,
+  turm_quantidade_minima,
+  turm_data_inicio,
+  turm_data_fim,
+  turm_status
+) VALUES
+(
+  1,
+  1,
+  'Inglês Básico A',
+  'Noite',
+  '[{"dia":"Segunda","inicio":"19:00","fim":"21:00","sala":"Sala 01"}]',
+  30,
+  10,
+  '2026-02-01',
+  '2026-07-01',
+  'ativa'
+),
+(
+  2,
+  2,
+  'Espanhol Intermediário',
+  'Tarde',
+  '[{"dia":"Terça","inicio":"14:00","fim":"16:00","sala":"Sala 02"}]',
+  25,
+  8,
+  '2026-02-01',
+  '2026-06-01',
+  'ativa'
+),
+(
+  3,
+  3,
+  'Francês Avançado',
+  'Manhã',
+  '[{"dia":"Quarta","inicio":"08:00","fim":"10:00","sala":"Sala 03"}]',
+  20,
+  5,
+  '2026-03-01',
+  '2026-10-01',
+  'ativa'
+);
+
+-- =====================================================
+-- TESTES TABELA PLANO
+-- =====================================================
+
+INSERT INTO plano (
+  plan_tipo,
+  plan_descricao,
+  plan_desconto,
+  plan_valor,
+  plan_status
+) VALUES
+(
+  'Mensal',
+  'Plano individual mensal',
+  0,
+  299.90,
+  'ativo'
+),
+(
+  'Família',
+  'Plano familiar com desconto',
+  15,
+  499.90,
+  'ativo'
+),
+(
+  'Amigos',
+  'Plano para grupo de amigos',
+  10,
+  399.90,
+  'ativo'
+);
+
+-- =====================================================
+-- TESTES TABELA MATRICULA
+-- =====================================================
+
+INSERT INTO matricula (
+  alun_id,
+  turm_id,
+  plan_id,
+  matr_data,
+  matr_status,
+  matr_desconto,
+  matr_valor_final
+) VALUES
+(
+  1,
+  1,
+  1,
+  '2026-01-10',
+  'ativa',
+  0,
+  799.90
+),
+(
+  2,
+  2,
+  2,
+  '2026-01-12',
+  'ativa',
+  15,
+  764.91
+),
+(
+  3,
+  3,
+  3,
+  '2026-01-15',
+  'pendente',
+  10,
+  1169.91
+);
+
+-- =====================================================
+-- TESTES TABELA PAGAMENTO
+-- =====================================================
+
+INSERT INTO pagamento (
+  matr_id,
+  paga_valor,
+  paga_data_vencimento,
+  paga_data_pagamento,
+  paga_forma_pagamento,
+  paga_status,
+  paga_gateway,
+  paga_gateway_id,
+  paga_comprovante_url,
+  paga_observacao
+) VALUES
+(
+  1,
+  299.90,
+  '2026-02-05',
+  '2026-02-03',
+  'PIX',
+  'aprovado',
+  'Mercado Pago',
+  'MP123456',
+  'https://site.com/comprovante1.pdf',
+  'Pagamento realizado com sucesso'
+),
+(
+  2,
+  499.90,
+  '2026-02-10',
+  NULL,
+  'Boleto',
+  'pendente',
+  'PagSeguro',
+  'PS654321',
+  NULL,
+  'Aguardando pagamento'
+),
+(
+  3,
+  399.90,
+  '2026-02-12',
+  NULL,
+  'Cartão',
+  'recusado',
+  'Stripe',
+  'ST789456',
+  NULL,
+  'Cartão recusado'
+);
+
+-- =====================================================
+-- TESTES TABELA ATENDIMENTO
+-- =====================================================
+
+INSERT INTO atendimento (
+  alun_id,
+  func_id,
+  aten_data_hora,
+  aten_tipo,
+  aten_descricao,
+  aten_status
+) VALUES
+(
+  1,
+  1,
+  '2026-01-05 14:00:00',
+  'matrícula',
+  'Aluno realizou matrícula',
+  'finalizado'
+),
+(
+  2,
+  2,
+  '2026-01-06 15:30:00',
+  'informação',
+  'Aluno pediu informações sobre cursos',
+  'finalizado'
+),
+(
+  3,
+  3,
+  '2026-01-07 16:00:00',
+  'pagamento',
+  'Aluno relatou problema no pagamento',
+  'pendente'
+);
+
+-- =====================================================
+-- TESTES TABELA AULA
+-- =====================================================
+
+INSERT INTO aula (
+  turm_id,
+  aula_data,
+  aula_conteudo,
+  aula_observacao
+) VALUES
+(
+  1,
+  '2026-02-10',
+  'Verbo To Be',
+  'Aula introdutória'
+),
+(
+  2,
+  '2026-02-11',
+  'Conversação básica',
+  'Participação excelente'
+),
+(
+  3,
+  '2026-02-12',
+  'Gramática avançada',
+  'Necessário revisar conteúdo'
+);
+
+-- =====================================================
+-- TESTES TABELA FREQUENCIA
+-- =====================================================
+
+INSERT INTO frequencia (
+  aula_id,
+  matr_id,
+  freq_status,
+  freq_observacao
+) VALUES
+(
+  1,
+  1,
+  'presente',
+  'Aluno participou normalmente'
+),
+(
+  2,
+  2,
+  'ausente',
+  'Aluno faltou sem justificativa'
+),
+(
+  3,
+  3,
+  'justificado',
+  'Atestado médico apresentado'
+);
