@@ -1,5 +1,5 @@
 # sql-escola-de-idiomas
-DOCUMENTO UTILIZADO DE BASE
+Documento desenvolvido anteriormete que foi usado para criar a estrutura SQL.
 https://docs.google.com/document/d/16E1imBgh17QSSE-fFs_obWcQRGM_6oBb/edit
 
 
