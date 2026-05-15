@@ -79,8 +79,7 @@ CREATE TABLE turma (
   CONSTRAINT fk_turma_curso
     FOREIGN KEY (curs_id) REFERENCES curso(curs_id)
     ON UPDATE CASCADE
-    ON DELETE RESTRICT,
-  
+    ON DELETE RESTRICT
 ) ;
 
 -- =========================
